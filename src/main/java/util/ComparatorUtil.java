@@ -1,3 +1,5 @@
+package util;
+
 import comparators.*;
 import enums.StudentComparatorType;
 import enums.UniversityComparatorType;
