@@ -1,13 +1,18 @@
 package model;
 
+import com.google.gson.annotations.SerializedName;
 import enums.StudyProfile;
 
 public class University {
-
+    @SerializedName(value = "ID")
     private String id;
+    @SerializedName(value = "name")
     private String fullName;
+    @SerializedName(value = "acronym")
     private String shortName;
+    @SerializedName(value = "creating")
     private int yearOfFoundation;
+    @SerializedName(value = "orientation")
     private StudyProfile mainProfile;
 
     public University() {
@@ -55,5 +60,15 @@ public class University {
     public University setMainProfile(StudyProfile mainProfile) {
         this.mainProfile = mainProfile;
         return this;
+    }
+    @Override
+    public String toString() {
+        return "University{" +
+                "id='" + id + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", shortName='" + shortName + '\'' +
+                ", yearOfFoundation=" + yearOfFoundation +
+                ", mainProfile=" + mainProfile.getProfileName() +
+                '}';
     }
 }
