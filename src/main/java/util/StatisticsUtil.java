@@ -46,7 +46,7 @@ public class StatisticsUtil {
                     .average();
             statistics.setAvgExamScore(0);
             avgExamScore.ifPresent(value -> statistics.setAvgExamScore(
-                    (float) BigDecimal.valueOf(value).setScale(2, RoundingMode.HALF_UP).doubleValue()));
+                    BigDecimal.valueOf(value).setScale(1, RoundingMode.HALF_UP).floatValue()));
         });
 
         return statisticsList;
